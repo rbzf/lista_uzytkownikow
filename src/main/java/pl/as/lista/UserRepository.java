@@ -9,14 +9,13 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-    User user1 = new User("Jacek", "Placek", 23);
+    public List<User> userList = new ArrayList<>() ;
 
-    User user2 = new User("Tomek", "Paluch", 22);
-
-    User user3 = new User("Stefek", "Burczymucha", 21);
-
-    public List<User> userList = new ArrayList<>()
-        {{ add(user1); add(user2); add(user3);}};
+    public UserRepository() {
+        userList.add(new User("Jacek", "Placek", 23));
+        userList.add(new User("Tomek", "Paluch", 22));
+        userList.add(new User("Stefek", "Burczymucha", 21));
+    }
 
     public List<User> getAll() {
         return userList;
